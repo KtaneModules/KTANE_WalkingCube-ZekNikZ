@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="50mm"
+   height="50mm"
+   viewBox="0 0 50 50"
+   version="1.1"
+   id="svg1408"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="Symbol6.svg"
+   inkscape:export-filename="C:\Users\mattr\Documents\KTANE_WalkingCube\ExternalAssets\Symbols\Symbol6.png"
+   inkscape:export-xdpi="65.024002"
+   inkscape:export-ydpi="65.024002">
+  <defs
+     id="defs1402" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="88.521382"
+     inkscape:cy="123.43759"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g2808"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-page="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-bbox-midpoints="true" />
+  <metadata
+     id="metadata1405">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2083"
+       transform="translate(0,0.20223331)">
+      <g
+         id="g2139"
+         transform="translate(-2.5088283,-4.3467264)">
+        <g
+           id="g2808"
+           transform="translate(-2.0000001e-7,12.408392)">
+          <circle
+             style="fill:#000000;stroke-width:4.60116"
+             id="path2784"
+             cx="27.508829"
+             cy="33.377831"
+             r="5" />
+          <path
+             id="path2786"
+             style="fill:#000000;stroke-width:2.89936"
+             d="M 27.508828,-4.9056281 A 15,15 0 0 0 12.50871,10.094481 15,15 0 0 0 27.508828,25.094599 15,15 0 0 0 42.508947,10.094481 15,15 0 0 0 27.508828,-4.9056281 Z m -0.06046,2.5001045 a 12.5,12.5 0 0 1 0.06046,0 A 12.5,12.5 0 0 1 40.008841,10.094481 12.5,12.5 0 0 1 27.508828,22.594493 12.5,12.5 0 0 1 15.008816,10.094481 12.5,12.5 0 0 1 27.448366,-2.4055236 Z" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
