@@ -871,54 +871,54 @@ public class WalkingCubeModule : MonoBehaviour
             Match[] matches = regices.Select(x => Regex.Match(subcommand, x)).ToArray();
             if (matches[0].Success) //place (sym) in (coord)
             {
-                List<Group> groups = matches[0].Groups.Cast<Group>().Skip(1).Where(x => x.Length != 0).ToList();
-                if (groups.Count == 1 && _selectedSymbol == -1)
+                GroupCollection groups = matches[0].Groups;
+                if (groups[1].Length == 0 && _selectedSymbol == -1)
                 {
                     yield return "sendtochaterror You cannot place the given symbol because no symbol is selected.";
                     yield break;
                 }
                 yield return null;
-                if (groups.Count == 2)
+                if (groups[1].Length != 0)
                 {
-                    while (_symbolPage != (groups[0].Value[0] - 'A'))
+                    while (_symbolPage != (groups[1].Value[0] - 'A'))
                     {
                         symbolButtons[5].OnInteract();
                         yield return new WaitForSeconds(0.1f);
                     }
-                    if (_selectedSymbol != groups[0].Value[1] - '1')
-                        symbolButtons[groups[0].Value[1] - '1'].OnInteract();
+                    if (_selectedSymbol != groups[1].Value[1] - '1')
+                        symbolButtons[groups[1].Value[1] - '1'].OnInteract();
                     yield return new WaitForSeconds(0.1f);
                 }
-                gridButtons[CoordToInt(groups.Last().Value, 4)].OnInteract();
+                gridButtons[CoordToInt(groups[2].Value, 4)].OnInteract();
                 yield return new WaitForSeconds(0.1f);
             }
             if (matches[1].Success)
             {
-                List<Group> groups = matches[1].Groups.Cast<Group>().Skip(1).Where(x => x.Length != 0).ToList();
-                if (groups.Count == 2 && _selectedSymbol == -1)
+                GroupCollection groups = matches[1].Groups;
+                if (groups[1].Length == 0 && _selectedSymbol == -1)
                 {
                     yield return "sendtochaterror You cannot rotate the given symbol because no symbol is selected.";
                     yield break;
                 }
                 yield return null;
-                if (groups.Count == 3)
+                if (groups[1].Length != 0)
                 {
-
-                    while (_symbolPage != (groups[0].Value[0] - 'A'))
+                    while (_symbolPage != (groups[1].Value[0] - 'A'))
                     {
                         symbolButtons[5].OnInteract();
                         yield return new WaitForSeconds(0.1f);
                     }
-                    if (_selectedSymbol != groups[0].Value[1] - '1')
-                        symbolButtons[groups[0].Value[1] - '1'].OnInteract();
+                    if (_selectedSymbol != groups[1].Value[1] - '1')
+                        symbolButtons[groups[1].Value[1] - '1'].OnInteract();
                     yield return new WaitForSeconds(0.1f);
                 }
-                int rotCount = int.Parse(groups[groups.Count - 2].Value) / 90;
-                if (groups.Last().Value == "CW")
+                int rotCount = int.Parse(groups[2].Value) / 90;
+                if (groups[3].Value == "CW")
                     rotCount = 4 - rotCount; //If the direction is cw, flip the direction.
+                KMSelectable targetButton = (groups[1].Length == 0) ? symbolButtons[_selectedSymbol] : symbolButtons[groups[1].Value[1] - '1'];
                 for (int i = 0; i < rotCount; i++)
                 {
-                    symbolButtons[groups[0].Value[1] - '1'].OnInteract();
+                    targetButton.OnInteract();
                     yield return new WaitForSeconds(0.1f);
                 }
             }
@@ -971,7 +971,7 @@ public class WalkingCubeModule : MonoBehaviour
         {
             for (int displayIx = 0; displayIx < 5; displayIx++)
                 for (int gridIx = 0; gridIx < 16; gridIx++)
-                    if (_solutionSymbols[gridIx / 4][gridIx % 4] == _symbolGrid[displayIx][_symbolPage])
+                    if (_solutionSymbols[gridIx / 4][gridIx % 4] == _symbolGrid[displayIx][_symbolPage] && !_locationsSol.Contains(new Pair<int, int>(gridIx / 4, gridIx % 4)))
                     {
                         do
                         {
